@@ -24,3 +24,7 @@ def rotate_2d_matrix(matrix):
                 for liss in lists:
                     holder[count].append(liss)
                     count += 1
+
+    matrix.clear()
+    for lists in holder:
+        matrix.append(lists)
