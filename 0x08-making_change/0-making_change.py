@@ -12,7 +12,6 @@ def makeChange(coins, total):
     holder = []
     hold = 0
     count = 0
-    lenght = len(coins)
     for coin in coins:
         for i in coins:
             hold = coin
@@ -23,11 +22,12 @@ def makeChange(coins, total):
                 if hold == total:
                     count += 1
                     holder.append(count)
+                    print(hold)
                     hold = 0
                     count = 0
                     break
-        if len(holder) > 0:
-            return min(holder)
-        else:
-            return -1
 
+    if len(holder) > 0:
+        return min(holder)
+    else:
+        return -1
