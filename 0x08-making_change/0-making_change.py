@@ -7,7 +7,7 @@ def makeChange(coins, total):
     make changes
     """
 
-    if total == 0:
+    if total <= 0:
         return 0
 
     holder = []
