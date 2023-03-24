@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Make changes"""
 
+
 def makeChange(coins, total):
     """
     make changes
@@ -8,7 +9,7 @@ def makeChange(coins, total):
 
     if total == 0:
         return 0
-    
+
     holder = []
     hold = 0
     count = 0
@@ -22,7 +23,6 @@ def makeChange(coins, total):
                 if hold == total:
                     count += 1
                     holder.append(count)
-                    print(hold)
                     hold = 0
                     count = 0
                     break
