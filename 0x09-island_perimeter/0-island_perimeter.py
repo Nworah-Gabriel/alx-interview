@@ -27,13 +27,12 @@ def island_parameter(grid):
                 if not (grid[y][x - 1]):
                     width += 1
                 if (grid[y][x - 1]) and (grid[y][x - 1] == 1):
-                    width += 1
-                if (grid[y][x - 1]) and (grid[y][x - 1] == 0):
-                    if (grid[y][x - 2]) and (grid[y][x - 2] == 1):
-                        width = 0
-                        break
-                    else:
-                        width += 1
+                    if (grid[y][x - 1]) and (grid[y][x - 1] == 0):
+                        if (grid[y][x - 2]) and (grid[y][x - 2] == 1):
+                            width = 0
+                            break
+                        else:
+                            width += 1
         if width != 0:
             length += 1
             length_list.append(length)
