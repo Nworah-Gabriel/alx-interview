@@ -6,7 +6,7 @@ An algorithm for island parameter
 
 def island_parameter(grid):
     """
-    gets the perimeter of an island in a list
+    gets the perimeter of an island in a matix
     """
 
     grid_length = len(grid)
