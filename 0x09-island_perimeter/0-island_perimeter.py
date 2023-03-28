@@ -38,4 +38,4 @@ def island_parameter(grid):
             length += 1
             length_list.append(length)
             width_list.append(width)
-    return (max(width_list) + sum(length_list) * 2)
+    return ((max(width_list) + sum(length_list)) * 2)
