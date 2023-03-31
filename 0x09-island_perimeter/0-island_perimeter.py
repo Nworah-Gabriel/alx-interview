@@ -1,12 +1,18 @@
 #!/usr/bin/python3
 """                                       An algorithm for island parameter         """
 
+
 def island_parameter(grid):
     """
-    Island perimeter
+    Calculate and return perimeter of island in the grid
+    Grid is a rectangular grid where 0s represent water and 1s represent land
+    Each cell is a square with a side length of 1
+    There is only one island
+    Args:
+        grid [list] : 2d list of ints either 0 or 1
+    Return:
+       perimeter of island
     """
-
-
     grid_length = len(grid)
     grid_width = len(grid[0])
     length_list = []
