@@ -1,11 +1,8 @@
 #!/usr/bin/python3
-"""
-An algorithm for island parameter
-"""
 
 
 def island_parameter(grid):
-    """                                       An algorithm for island parameter         """
+
 
     grid_length = len(grid)
     grid_width = len(grid[0])
