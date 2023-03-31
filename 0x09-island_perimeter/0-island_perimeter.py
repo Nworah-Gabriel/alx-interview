@@ -1,8 +1,60 @@
 #!/usr/bin/python3
-"""                                       An algorithm for island parameter         """
+"""
+Define island_perimeter function that finds the perimeter
+of an island in a body of water
+"""
+
+bound_4 = set()
+bound_3 = set()
+bound_2 = set()
+bound_1 = set()
 
 
-def island_parameter(grid):
+def boundary(grid, i, j):
+    """Find cells with either 4, 3, 2 or 1 exposed boundary and add them to
+       appropriate set
+       Args:
+           grid (list): 2d list
+           i (int): row number
+           j (int): column number
+    """
+    boundaries = 0
+    try:
+        if i == 0:
+            boundaries += 1
+        elif grid[i-1][j] == 0:
+            boundaries += 1
+    except:
+        boundaries += 1
+    try:
+        if grid[i+1][j] == 0:
+            boundaries += 1
+    except:
+        boundaries += 1
+    try:
+        if grid[i][j+1] == 0:
+            boundaries += 1
+    except:
+        boundaries += 1
+    try:
+        if j == 0:
+            boundaries += 1
+        elif grid[i][j-1] == 0:
+            boundaries += 1
+    except:
+        boundaries += 1
+
+    if boundaries == 1:
+        bound_1.add((i, j))
+    elif boundaries == 2:
+        bound_2.add((i, j))
+    elif boundaries == 3:
+        bound_3.add((i, j))
+    elif boundaries == 4:
+        bound_4.add((i, j))
+
+
+def island_perimeter(grid):
     """
     Calculate and return perimeter of island in the grid
     Grid is a rectangular grid where 0s represent water and 1s represent land
@@ -13,32 +65,15 @@ def island_parameter(grid):
     Return:
        perimeter of island
     """
-    grid_length = len(grid)
-    grid_width = len(grid[0])
-    length_list = []
-    width_list = []
-
-    if not grid:
-        return
-
-    for y in range(0, grid_length):
-        length = 0
-        width = 0
-        for x in range(0, grid_width):
-            if grid[y][x] == 0:
-                continue
-            if grid[y][x] == 1:
-                if not (grid[y][x - 1]):
-                    width += 1
-                if (grid[y][x - 1]) and (grid[y][x - 1] == 1):
-                    if (grid[y][x - 1]) and (grid[y][x - 1] == 0):
-                        if (grid[y][x - 2]) and (grid[y][x - 2] == 1):
-                            width = 0
-                            break
-                        else:
-                            width += 1
-        if width != 0:
-            length += 1
-            length_list.append(length)
-            width_list.append(width)
-    return ((max(width_list) + sum(length_list)) * 2)
+    if grid == []:
+        return 0
+    l = len(grid)
+    w = len(grid[0])
+    for i in range(l):
+        for j in range(w):
+            if grid[i][j] == 1:
+                boundary(grid, i, j)
+                if len(bound_4) != 0:
+                    return 4
+    perimeter = (len(bound_3) * 3) + (len(bound_2) * 2) + (len(bound_1))
+    return perimeter
