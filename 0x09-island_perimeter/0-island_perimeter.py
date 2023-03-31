@@ -5,15 +5,7 @@ An algorithm for island parameter
 
 
 def island_parameter(grid):
-    """
-    gets the perimeter of an island in a matix when passed a list of lists
-    grid is a list of list of integers:
-0 represents water
-1 represents land
-Each cell is square, with a side length of 1
-Cells are connected horizontally/vertically (not diagonally).
-grid is rectangular, with its width and height not
-    """
+    """ A function for calculating the perimeter of an island in a list """
 
     grid_length = len(grid)
     grid_width = len(grid[0])
