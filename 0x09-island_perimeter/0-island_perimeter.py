@@ -5,7 +5,7 @@ An algorithm for island parameter
 
 
 def island_parameter(grid):
-    """ A function for calculating the perimeter of an island in a list """
+    """                                       An algorithm for island parameter         """
 
     grid_length = len(grid)
     grid_width = len(grid[0])
