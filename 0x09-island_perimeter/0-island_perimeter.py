@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-
+"""                                       An algorithm for island parameter         """
 
 def island_parameter(grid):
+    """
+    Island perimeter
+    """
 
 
     grid_length = len(grid)
